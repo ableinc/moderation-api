@@ -2,7 +2,7 @@ services:
   moderation-api:
     build:
       context: .
-      platform: linux/arm64
+    platform: linux/arm64
     image: moderation-api:latest
     container_name: moderation-api
     restart: unless-stopped
