@@ -1,0 +1,12 @@
+services:
+  moderation-api:
+    build:
+      context: .
+      platform: linux/arm64
+    image: moderation-api:latest
+    container_name: moderation-api
+    restart: unless-stopped
+    ports:
+      # Bind only to localhost so the API is reachable from other
+      # processes on this EC2 instance but not from the public internet.
+      - "127.0.0.1:9090:9090"
